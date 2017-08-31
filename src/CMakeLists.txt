@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
+# WARNING Mylene: -lcdd option not added during configuration (maybe because of old cmake version), in robust-equilibrium-lib/build/src/robust-equilibrium-lib/CMakeFiles/robust-equilibrium-lib.dir/link.txt
+# This causes linkage error during compilation
 
 include_directories("${SRC_DIR}")
 include_directories("${INCLUDE_DIR}")

@@ -1,4 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
+# WARNING Mylene: -lcdd option not added during configuration (maybe because of old cmake version), in robust-equilibrium-lib/build/src/robust-equilibrium-lib/CMakeFiles/robust-equilibrium-lib.dir/link.txt
+# This causes linkage error during compilation
 INCLUDE(cmake/base.cmake)
 INCLUDE(cmake/cpack.cmake)
 INCLUDE(cmake2/FindqpOASES.cmake)
@@ -53,6 +55,8 @@ endif()
 
 find_package(CDD REQUIRED)
 find_package(CLP)
+
+set(CMAKE_CXX_FLAGS "-lcdd") # Test Mylene
 
 IF("${CLP_LIBRARY}" STREQUAL "CLP_LIBRARY-NOTFOUND")
   message(STATUS "CLP_LIBRARY equal to CLP_LIBRARY-NOTFOUND so I assume CLP was not found ")
